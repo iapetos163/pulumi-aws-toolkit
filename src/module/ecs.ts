@@ -1,53 +1,30 @@
-import type { TaskDefinition } from '@pulumi/aws/ecs';
-import type { PolicyStatement, Role } from '@pulumi/aws/iam';
-import { Input, all, output } from '@pulumi/pulumi';
+import type { ContainerDefinition } from '@pulumi/aws/ecs';
+import { Input, jsonStringify, output } from '@pulumi/pulumi';
 
-export const containerDefinitionBase = {
+export type { RunEcsTaskTriggerArgs } from '../lib/cloudwatch-ecs';
+export type { RunEcsTaskArgs } from '../lib/ecs-iam';
+
+export { RunEcsTaskTrigger } from '../lib/cloudwatch-ecs';
+export { ecrPullAccessStatements } from '../lib/ecr';
+export { runEcsTaskAccessStatements } from '../lib/ecs-iam';
+
+const containerDefinitionBase = {
   cpu: 0,
   mountPoints: [],
   portMappings: [],
   user: '0',
   volumesFrom: [],
+  environment: [],
 };
 
-export interface RunTaskAccessOptions {
-  executionRoleOverride?: Input<Role>;
-  taskRoleOverride?: Input<Role>;
-}
-
-export const runTaskAccess = (
-  taskDef: TaskDefinition,
-  options: RunTaskAccessOptions = {},
-) => {
-  const statements: PolicyStatement[] = [
-    {
-      Effect: 'Allow',
-      Action: 'ecs:RunTask',
-      Resource: taskDef.arn,
-    },
-  ];
-
-  const { executionRoleOverride, taskRoleOverride } = options;
-
-  return all([
-    output(executionRoleOverride).apply((r) => r?.arn),
-    output(taskRoleOverride).apply((r) => r?.arn),
-    taskDef.executionRoleArn,
-    taskDef.taskRoleArn,
-  ]).apply((roleArns): PolicyStatement[] => {
-    const allRoleArns = roleArns.filter((r): r is string => !!r);
-
-    if (allRoleArns.length === 0) {
-      return statements;
-    }
-
-    return [
-      ...statements,
-      {
-        Effect: 'Allow',
-        Action: 'iam:PassRole',
-        Resource: allRoleArns,
-      },
-    ];
-  });
-};
+export const fargateContainerDefinitions = (
+  definitions: Input<ContainerDefinition>[],
+) =>
+  jsonStringify(
+    definitions.map((defInput) =>
+      output(defInput).apply((definition) => ({
+        ...containerDefinitionBase,
+        definition,
+      })),
+    ),
+  );

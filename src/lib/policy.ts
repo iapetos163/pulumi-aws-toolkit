@@ -17,27 +17,27 @@ export const policyDocument = (statements: Input<Input<PolicyStatement>[]>) => {
   return jsonStringify(policy);
 };
 
-export interface AssumeRolePolicyPrincipals {
+export interface AssumeRolePrincipals {
   /**
    * Slugs for the AWS services that can assume the role, without .amazonaws.com
    * @example ['ec2', 'lambda']
    */
-  services?: string[];
+  readonly services?: string[];
   /**
    * IAM users that can assume the role
    */
-  users?: Input<Input<User | GetUserResult>[]>;
+  readonly users?: Input<Input<User | GetUserResult>[]>;
   /**
    * IDs for the AWS accounts that can assume the role
    */
-  accounts?: Input<Input<string>[]>;
+  readonly accounts?: Input<Input<string>[]>;
   /**
    * IAM roles that can assume the role
    */
-  roles?: Input<Input<Role | GetRoleResult>[]>;
+  readonly roles?: Input<Input<Role | GetRoleResult>[]>;
 }
 
-export const assumeRolePolicy = (principals: AssumeRolePolicyPrincipals) => {
+export const assumeRolePolicyDocument = (principals: AssumeRolePrincipals) => {
   const principalDocs: Principal[] = [];
 
   if (principals.services) {

@@ -14,7 +14,9 @@ type ExcludedArgs =
   | 'securityGroupId';
 
 type AddedArgs = {
-  mountTargetSecurityGroup: Input<SecurityGroup | GetSecurityGroupResult>;
+  readonly mountTargetSecurityGroup: Input<
+    SecurityGroup | GetSecurityGroupResult
+  >;
 };
 
 export type EfsAccessRuleArgs = Omit<SecurityGroupRuleArgs, ExcludedArgs> &

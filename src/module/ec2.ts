@@ -5,6 +5,10 @@ import {
 } from '@pulumi/aws/ec2';
 import { ComponentResource, Input, output } from '@pulumi/pulumi';
 
+export type { EfsAccessRuleArgs } from '../lib/ec2-efs';
+
+export { EfsAccessRule } from '../lib/ec2-efs';
+
 export class AllowAllOutbound extends ComponentResource {
   constructor(
     name: string,
