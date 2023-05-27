@@ -1,0 +1,45 @@
+{
+  "name": "pulumi-aws-toolkit",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/iapetos163/pulumi-aws-toolkit",
+  "license": "MPL-2.0",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "docs": "typedoc src/module/*",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "test:ci": "jest --ci"
+  },
+  "exports": {
+    "./*": "./dist/module/*"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "aws",
+    "pulumi"
+  ],
+  "devDependencies": {
+    "@pulumi/aws": "^5.41.0",
+    "@pulumi/pulumi": "^3.68.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.11.18",
+    "eslint": "^8.34.0",
+    "eslint-config-birbcore": "github:iapetos163/eslint-config-birbcore",
+    "jest": "^29.4.2",
+    "jest-junit": "^15.0.0",
+    "prettier": "^2.8.4",
+    "ts-jest": "^29.0.5",
+    "typedoc": "^0.24.7",
+    "typedoc-plugin-markdown": "^3.15.3",
+    "typescript": "~4.9.5"
+  },
+  "peerDependencies": {
+    "@pulumi/aws": "^5.41.0",
+    "@pulumi/pulumi": "^3.68.0"
+  }
+}

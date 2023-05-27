@@ -1,0 +1,7 @@
+dist
+node_modules
+junit.xml
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out

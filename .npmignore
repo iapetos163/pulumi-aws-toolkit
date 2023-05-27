@@ -1,0 +1,7 @@
+src
+junit.xml
+.vscode
+.github
+/*.js
+tsconfig.json
+
