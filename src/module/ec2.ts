@@ -3,52 +3,40 @@ import {
   SecurityGroup,
   SecurityGroupRule,
 } from '@pulumi/aws/ec2';
-import { Input, output } from '@pulumi/pulumi';
+import { ComponentResource, Input, output } from '@pulumi/pulumi';
 
-export const allowAllOutbound = (
-  name: string,
-  securityGroup: Input<SecurityGroup | GetSecurityGroupResult>,
-) => {
-  output(securityGroup).apply((securityGroup) => {
-    new SecurityGroupRule(`${name}-ipv4`, {
-      securityGroupId: securityGroup.id,
-      type: 'egress',
-      protocol: 'all',
-      fromPort: -1,
-      toPort: -1,
-      cidrBlocks: ['0.0.0.0/0'],
-    });
-    new SecurityGroupRule(`${name}-ipv6`, {
-      securityGroupId: securityGroup.id,
-      type: 'egress',
-      protocol: 'all',
-      fromPort: -1,
-      toPort: -1,
-      ipv6CidrBlocks: ['::/0'],
-    });
-  });
-};
+export class AllowAllOutbound extends ComponentResource {
+  constructor(
+    name: string,
+    securityGroup: Input<SecurityGroup | GetSecurityGroupResult>,
+  ) {
+    super('pulumi-aws-toolkit:ec2:AllowAllOutbound', name);
 
-export const allowPing = (
-  name: string,
-  securityGroup: Input<SecurityGroup | GetSecurityGroupResult>,
-) => {
-  output(securityGroup).apply((securityGroup) => {
-    new SecurityGroupRule(`${name}-ipv4`, {
-      securityGroupId: securityGroup.id,
-      type: 'ingress',
-      protocol: 'icmp',
-      fromPort: -1,
-      toPort: -1,
-      cidrBlocks: ['0.0.0.0/0'],
+    output(securityGroup).apply((securityGroup) => {
+      new SecurityGroupRule(
+        `${name}-ipv4`,
+        {
+          securityGroupId: securityGroup.id,
+          type: 'egress',
+          protocol: 'all',
+          fromPort: -1,
+          toPort: -1,
+          cidrBlocks: ['0.0.0.0/0'],
+        },
+        { parent: this },
+      );
+      new SecurityGroupRule(
+        `${name}-ipv6`,
+        {
+          securityGroupId: securityGroup.id,
+          type: 'egress',
+          protocol: 'all',
+          fromPort: -1,
+          toPort: -1,
+          ipv6CidrBlocks: ['::/0'],
+        },
+        { parent: this },
+      );
     });
-    new SecurityGroupRule(`${name}-ipv6`, {
-      securityGroupId: securityGroup.id,
-      type: 'ingress',
-      protocol: 'icmp',
-      fromPort: -1,
-      toPort: -1,
-      ipv6CidrBlocks: ['::/0'],
-    });
-  });
-};
+  }
+}
