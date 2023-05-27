@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / eventbridge
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / eventbridge
 
 # Module: eventbridge
 

@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / iam
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / iam
 
 # Module: iam
 
@@ -53,7 +53,7 @@ for an IAM Role
 
 #### Defined in
 
-[src/lib/policy.ts:48](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/policy.ts#L48)
+[src/lib/policy.ts:48](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/policy.ts#L48)
 
 ___
 
@@ -75,7 +75,7 @@ Get a formatted IAM policy document with the given statements
 
 #### Defined in
 
-[src/lib/policy.ts:15](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/policy.ts#L15)
+[src/lib/policy.ts:15](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/policy.ts#L15)
 
 ___
 
@@ -105,7 +105,7 @@ to read objects matching the given pattern
 
 #### Defined in
 
-[src/lib/s3-iam.ts:21](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/s3-iam.ts#L21)
+[src/lib/s3-iam.ts:21](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/s3-iam.ts#L21)
 
 ___
 
@@ -135,4 +135,4 @@ to read, write, and delete objects matching the given pattern
 
 #### Defined in
 
-[src/lib/s3-iam.ts:40](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/s3-iam.ts#L40)
+[src/lib/s3-iam.ts:40](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/s3-iam.ts#L40)

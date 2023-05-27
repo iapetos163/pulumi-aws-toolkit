@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](README.md) / Modules
+[pulumi-aws-toolkit](README.md) / Exports
 
 # pulumi-aws-toolkit
 

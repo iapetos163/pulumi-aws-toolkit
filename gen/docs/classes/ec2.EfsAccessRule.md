@@ -1,10 +1,42 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / [ec2](../modules/ec2.md) / EfsAccessRule
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / [ec2](../modules/ec2.md) / EfsAccessRule
 
 # Class: EfsAccessRule
 
 [ec2](../modules/ec2.md).EfsAccessRule
 
 Security group rule that grants access to mount an EFS volume
+
+**`Example`**
+
+```
+import { SecurityGroup } from '@pulumi/aws/ec2';
+import { FileSystem, MountTarget } from '@pulumi/aws/efs';
+import { AllowAllOutbound, EfsAccessRule } from 'pulumi-aws-toolkit/ec2';
+
+const mountTargetSecurityGroup = new SecurityGroup('fs-sg', { vpcId: myVpcId });
+// This allows network traffic out from the volume
+new AllowAllOutbound('fs-sg-outbound', mountTargetSecurityGroup);
+
+// This security group will be assigned to an EC2 instance that mounts the EFS volume
+const instanceSecurityGroup = new SecurityGroup('instance-sg', { vpcId: myVpcId });
+
+const filesystem = new FileSystem('fs');
+new MountTarget('fs-target', {
+  fileSystemId: filesystem.id,
+  subnetId: myVpcSubnetId,
+  securityGroups: [mountTargetSecurityGroup.id],
+});
+
+// This allows the EC2 instance to mount the filesystem
+new EfsAccessRule('fs-sg-access', {
+  mountTargetSecurityGroup,
+
+  // This can be replaced with cidrBlocks or ipv6CidrBlocks
+  sourceSecurityGroupId: instanceSecurityGroup.id,
+});
+
+// EC2 instance declaration here ...
+```
 
 ## Hierarchy
 
@@ -60,7 +92,7 @@ SecurityGroupRule.constructor
 
 #### Defined in
 
-[src/lib/ec2-efs.ts:32](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/ec2-efs.ts#L32)
+[src/lib/ec2-efs.ts:62](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/ec2-efs.ts#L62)
 
 ## Properties
 

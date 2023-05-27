@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / [iam](../modules/iam.md) / AssumeRolePrincipals
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / [iam](../modules/iam.md) / AssumeRolePrincipals
 
 # Interface: AssumeRolePrincipals
 
@@ -23,7 +23,7 @@ IDs for the AWS accounts that can assume the role
 
 #### Defined in
 
-[src/lib/policy.ts:36](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/policy.ts#L36)
+[src/lib/policy.ts:36](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/policy.ts#L36)
 
 ___
 
@@ -35,7 +35,7 @@ IAM roles that can assume the role
 
 #### Defined in
 
-[src/lib/policy.ts:40](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/policy.ts#L40)
+[src/lib/policy.ts:40](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/policy.ts#L40)
 
 ___
 
@@ -53,7 +53,7 @@ Slugs for the AWS services that can assume the role, without .amazonaws.com
 
 #### Defined in
 
-[src/lib/policy.ts:28](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/policy.ts#L28)
+[src/lib/policy.ts:28](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/policy.ts#L28)
 
 ___
 
@@ -65,4 +65,4 @@ IAM users that can assume the role
 
 #### Defined in
 
-[src/lib/policy.ts:32](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/policy.ts#L32)
+[src/lib/policy.ts:32](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/policy.ts#L32)

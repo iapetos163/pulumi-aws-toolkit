@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / ecr
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / ecr
 
 # Module: ecr
 
@@ -16,7 +16,6 @@
 
 Get IAM policy statements that grant permission
 to pull images from the given repository.
-Useful to add to ECS task execution policies.
 
 #### Parameters
 
@@ -30,4 +29,4 @@ Useful to add to ECS task execution policies.
 
 #### Defined in
 
-[src/lib/ecr.ts:10](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/ecr.ts#L10)
+[src/lib/ecr.ts:9](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/ecr.ts#L9)

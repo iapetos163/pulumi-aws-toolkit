@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / [ecs](../modules/ecs.md) / RunEcsTaskTrigger
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / [ecs](../modules/ecs.md) / RunEcsTaskTrigger
 
 # Class: RunEcsTaskTrigger
 
@@ -50,7 +50,7 @@ ComponentResource.constructor
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:65](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L65)
+[src/lib/cloudwatch-ecs.ts:65](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L65)
 
 ## Properties
 

@@ -1,4 +1,4 @@
-pulumi-aws-toolkit / [Modules](modules.md)
+pulumi-aws-toolkit / [Exports](modules.md)
 
 # AMI Builder
 

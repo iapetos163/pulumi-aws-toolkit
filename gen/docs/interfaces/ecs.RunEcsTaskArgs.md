@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / [ecs](../modules/ecs.md) / RunEcsTaskArgs
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / [ecs](../modules/ecs.md) / RunEcsTaskArgs
 
 # Interface: RunEcsTaskArgs
 
@@ -22,7 +22,7 @@ Only required if different from the task definition's execution role.
 
 #### Defined in
 
-[src/lib/ecs-iam.ts:10](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/ecs-iam.ts#L10)
+[src/lib/ecs-iam.ts:10](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/ecs-iam.ts#L10)
 
 ___
 
@@ -35,4 +35,4 @@ Only required if different from the task definition's task role.
 
 #### Defined in
 
-[src/lib/ecs-iam.ts:15](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/ecs-iam.ts#L15)
+[src/lib/ecs-iam.ts:15](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/ecs-iam.ts#L15)

@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / ecs
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / ecs
 
 # Module: ecs
 
@@ -48,7 +48,7 @@ Get formatted container definitions for a Fargate task.
 
 #### Defined in
 
-[src/module/ecs.ts:23](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/module/ecs.ts#L23)
+[src/module/ecs.ts:23](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/module/ecs.ts#L23)
 
 ___
 
@@ -72,4 +72,4 @@ from the given task definition
 
 #### Defined in
 
-[src/lib/ecs-iam.ts:22](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/ecs-iam.ts#L22)
+[src/lib/ecs-iam.ts:22](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/ecs-iam.ts#L22)

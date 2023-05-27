@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / [ec2](../modules/ec2.md) / AllowAllOutbound
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / [ec2](../modules/ec2.md) / AllowAllOutbound
 
 # Class: AllowAllOutbound
 
@@ -49,7 +49,7 @@ ComponentResource.constructor
 
 #### Defined in
 
-[src/module/ec2.ts:16](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/module/ec2.ts#L16)
+[src/module/ec2.ts:16](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/module/ec2.ts#L16)
 
 ## Properties
 

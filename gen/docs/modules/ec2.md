@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / ec2
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / ec2
 
 # Module: ec2
 
@@ -21,4 +21,4 @@
 
 #### Defined in
 
-[src/lib/ec2-efs.ts:25](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/ec2-efs.ts#L25)
+[src/lib/ec2-efs.ts:25](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/ec2-efs.ts#L25)

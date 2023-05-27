@@ -1,4 +1,4 @@
-[pulumi-aws-toolkit](../README.md) / [Modules](../modules.md) / [ecs](../modules/ecs.md) / RunEcsTaskTriggerArgs
+[pulumi-aws-toolkit](../README.md) / [Exports](../modules.md) / [ecs](../modules/ecs.md) / RunEcsTaskTriggerArgs
 
 # Interface: RunEcsTaskTriggerArgs
 
@@ -26,7 +26,7 @@ Cluster in which the task should run
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:23](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L23)
+[src/lib/cloudwatch-ecs.ts:23](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L23)
 
 ___
 
@@ -53,7 +53,7 @@ https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerOverride.
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:49](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L49)
+[src/lib/cloudwatch-ecs.ts:49](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L49)
 
 ___
 
@@ -65,7 +65,7 @@ VPC network configuration for the task
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:27](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L27)
+[src/lib/cloudwatch-ecs.ts:27](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L27)
 
 ___
 
@@ -77,7 +77,7 @@ The EventBridge rule to trigger running the ECS task
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:31](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L31)
+[src/lib/cloudwatch-ecs.ts:31](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L31)
 
 ___
 
@@ -89,7 +89,7 @@ ECS task definition
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:35](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L35)
+[src/lib/cloudwatch-ecs.ts:35](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L35)
 
 ___
 
@@ -101,7 +101,7 @@ Override the task definition's task execution role
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:57](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L57)
+[src/lib/cloudwatch-ecs.ts:57](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L57)
 
 ___
 
@@ -113,4 +113,4 @@ Override the task definition's task role
 
 #### Defined in
 
-[src/lib/cloudwatch-ecs.ts:53](https://github.com/iapetos163/pulumi-aws-toolkit/blob/f4261c5/src/lib/cloudwatch-ecs.ts#L53)
+[src/lib/cloudwatch-ecs.ts:53](https://github.com/iapetos163/pulumi-aws-toolkit/blob/e0762b2/src/lib/cloudwatch-ecs.ts#L53)
