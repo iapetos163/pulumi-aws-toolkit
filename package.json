@@ -1,8 +1,6 @@
 {
   "name": "pulumi-aws-toolkit",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "repository": "https://github.com/iapetos163/pulumi-aws-toolkit",
   "license": "MPL-2.0",
   "scripts": {
@@ -14,7 +12,7 @@
     "test:ci": "jest --ci"
   },
   "exports": {
-    "./*": "./dist/module/*"
+    "./*": "./dist/module/*.js"
   },
   "engines": {
     "node": ">=16"
