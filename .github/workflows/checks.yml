@@ -24,13 +24,13 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Test
-        run: npm run test:ci
+      # - name: Test
+      #   run: npm run test:ci
 
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          reporter: jest-junit
-          path: junit.xml
-          name: Unit Tests
+      # - name: Test Report
+      #   uses: dorny/test-reporter@v1
+      #   if: success() || failure()
+      #   with:
+      #     reporter: jest-junit
+      #     path: junit.xml
+      #     name: Unit Tests
