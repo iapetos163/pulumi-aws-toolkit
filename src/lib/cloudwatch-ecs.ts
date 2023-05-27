@@ -17,15 +17,50 @@ import { runEcsTaskAccessStatements } from './ecs-iam';
 import { assumeRolePolicyDocument, policyDocument } from './policy';
 
 export interface RunEcsTaskTriggerArgs {
+  /**
+   * Cluster in which the task should run
+   */
   readonly cluster: Input<Cluster | GetClusterResult>;
+  /**
+   * VPC network configuration for the task
+   */
   readonly networkConfiguration: Input<input.cloudwatch.EventTargetEcsTargetNetworkConfiguration>;
+  /**
+   * The EventBridge rule to trigger running the ECS task
+   */
   readonly rule: Input<cloudwatch.EventRule>;
+  /**
+   * ECS task definition
+   */
   readonly taskDefinition: Input<TaskDefinition | GetTaskDefinitionResult>;
+  /**
+   * Overrides for the task definition's containers
+   * @see https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerOverride.html
+   * @example
+   * ```
+   * [
+   *   {
+   *     name: 'containername',
+   *     environment: [{ name: 'ADDITIONAL_ENV_VAR', value: 'something'}],
+   *   }
+   * ]
+   * ```
+   */
   readonly containerOverrides?: Input<Input<object>[]>;
+  /**
+   * Override the task definition's task role
+   */
   readonly taskRole?: Input<Role | GetRoleResult>;
+  /**
+   * Override the task definition's task execution role
+   */
   readonly taskExecutionRole?: Input<Role | GetRoleResult>;
 }
 
+/**
+ * Set up an EventBridge target to run an ECS task
+ * whenever the provided Event Rule is triggered
+ */
 export class RunEcsTaskTrigger extends ComponentResource {
   constructor(name: string, props: RunEcsTaskTriggerArgs) {
     super('pulumi-aws-toolkit:cloudwatch:RunEcsTaskTrigger', name);

@@ -14,6 +14,9 @@ type ExcludedArgs =
   | 'securityGroupId';
 
 type AddedArgs = {
+  /**
+   * Security group in use for the file system's mount targets
+   */
   readonly mountTargetSecurityGroup: Input<
     SecurityGroup | GetSecurityGroupResult
   >;
@@ -22,6 +25,9 @@ type AddedArgs = {
 export type EfsAccessRuleArgs = Omit<SecurityGroupRuleArgs, ExcludedArgs> &
   AddedArgs;
 
+/**
+ * Security group rule that grants access to mount an EFS volume
+ */
 export class EfsAccessRule extends SecurityGroupRule {
   constructor(name: string, props: EfsAccessRuleArgs) {
     const { mountTargetSecurityGroup, ...restProps } = props;

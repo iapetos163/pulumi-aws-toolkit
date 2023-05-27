@@ -9,6 +9,9 @@ import {
 } from '@pulumi/aws/iam';
 import { Input, all, interpolate, jsonStringify, output } from '@pulumi/pulumi';
 
+/**
+ * Get a formatted IAM policy document with the given statements
+ */
 export const policyDocument = (statements: Input<Input<PolicyStatement>[]>) => {
   const policy: PolicyDocument = {
     Version: '2012-10-17',
@@ -37,6 +40,11 @@ export interface AssumeRolePrincipals {
   readonly roles?: Input<Input<Role | GetRoleResult>[]>;
 }
 
+/**
+ * Get a formatted Assume Role Policy (a.k.a. Trust Policy)
+ * for an IAM Role
+ * @param principals The services, users, roles, or accounts allowed to assume the role
+ */
 export const assumeRolePolicyDocument = (principals: AssumeRolePrincipals) => {
   const principalDocs: Principal[] = [];
 

@@ -9,6 +9,9 @@ export type { EfsAccessRuleArgs } from '../lib/ec2-efs';
 
 export { EfsAccessRule } from '../lib/ec2-efs';
 
+/**
+ * Set of security group rules that allow all outbound traffic
+ */
 export class AllowAllOutbound extends ComponentResource {
   constructor(
     name: string,

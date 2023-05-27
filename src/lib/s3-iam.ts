@@ -11,6 +11,13 @@ const readActions = (entireBucket = false) => {
   return actions;
 };
 
+/**
+ * Get IAM policy statements that grant permission
+ * to read objects matching the given pattern
+ * @param bucket
+ * @param objKeyPattern Glob pattern of objects that can be read
+ *   @default '*' (any object in the bucket)
+ */
 export const s3ObjectReadAccessStatements = (
   bucket: Input<Bucket>,
   objKeyPattern: Input<string> = '*',
@@ -23,6 +30,13 @@ export const s3ObjectReadAccessStatements = (
     }),
   );
 
+/**
+ * Get IAM policy statements that grant permission
+ * to read, write, and delete objects matching the given pattern
+ * @param bucket
+ * @param objKeyPattern Glob pattern of objects that can be accessed
+ *   @default '*' (any object in the bucket)
+ */
 export const s3ObjectReadWriteAccessStatements = (
   bucket: Input<Bucket>,
   objKeyPattern: Input<string> = '*',

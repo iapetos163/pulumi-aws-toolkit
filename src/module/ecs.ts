@@ -17,6 +17,9 @@ const containerDefinitionBase = {
   environment: [],
 };
 
+/**
+ * Get formatted container definitions for a Fargate task.
+ */
 export const fargateContainerDefinitions = (
   definitions: Input<ContainerDefinition>[],
 ) =>

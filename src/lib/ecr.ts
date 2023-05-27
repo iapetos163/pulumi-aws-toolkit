@@ -2,6 +2,11 @@ import type { GetRepositoryResult, Repository } from '@pulumi/aws/ecr';
 import type { PolicyStatement } from '@pulumi/aws/iam';
 import { Input, output } from '@pulumi/pulumi';
 
+/**
+ * Get IAM policy statements that grant permission
+ * to pull images from the given repository.
+ * Useful to add to ECS task execution policies.
+ */
 export const ecrPullAccessStatements = (
   repository: Input<Repository | GetRepositoryResult>,
 ): PolicyStatement[] => [
