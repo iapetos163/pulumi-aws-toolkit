@@ -27,7 +27,7 @@ export const fargateContainerDefinitions = (
     definitions.map((defInput) =>
       output(defInput).apply((definition) => ({
         ...containerDefinitionBase,
-        definition,
+        ...definition,
       })),
     ),
   );
