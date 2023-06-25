@@ -1,6 +1,6 @@
 import type { GetTaskDefinitionResult, TaskDefinition } from '@pulumi/aws/ecs';
 import type { GetRoleResult, PolicyStatement, Role } from '@pulumi/aws/iam';
-import { Input, all, output } from '@pulumi/pulumi';
+import { Input, all, interpolate, output } from '@pulumi/pulumi';
 
 export interface RunEcsTaskArgs {
   /**
@@ -28,7 +28,10 @@ export const runEcsTaskAccessStatements = (
       {
         Effect: 'Allow',
         Action: 'ecs:RunTask',
-        Resource: taskDef.arn,
+        Resource: [
+          taskDef.arnWithoutRevision,
+          interpolate`${taskDef.arnWithoutRevision}:*`,
+        ],
       },
     ];
 

@@ -95,7 +95,7 @@ export class RunEcsTaskTrigger extends ComponentResource {
       rule: output(rule).name,
       roleArn: role.arn,
       ecsTarget: {
-        taskDefinitionArn: output(taskDefinition).arn,
+        taskDefinitionArn: output(taskDefinition).arnWithoutRevision,
         networkConfiguration,
         launchType: 'FARGATE',
       },
