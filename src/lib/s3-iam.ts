@@ -22,13 +22,13 @@ export const s3ObjectReadAccessStatements = (
   bucket: Input<Bucket>,
   objKeyPattern: Input<string> = '*',
 ) =>
-  output(objKeyPattern).apply(
-    (objKeyPattern): PolicyStatement => ({
+  output(objKeyPattern).apply((objKeyPattern): PolicyStatement[] => [
+    {
       Effect: 'Allow',
       Resource: bucketAndObjectArns(bucket, objKeyPattern),
       Action: readActions(objKeyPattern === '*'),
-    }),
-  );
+    },
+  ]);
 
 /**
  * Get IAM policy statements that grant permission
@@ -41,8 +41,8 @@ export const s3ObjectReadWriteAccessStatements = (
   bucket: Input<Bucket>,
   objKeyPattern: Input<string> = '*',
 ) =>
-  output(objKeyPattern).apply(
-    (objKeyPattern): PolicyStatement => ({
+  output(objKeyPattern).apply((objKeyPattern): PolicyStatement[] => [
+    {
       Effect: 'Allow',
       Resource: bucketAndObjectArns(bucket, objKeyPattern),
       Action: [
@@ -51,5 +51,5 @@ export const s3ObjectReadWriteAccessStatements = (
         's3:PutObjectAcl',
         's3:DeleteObject',
       ],
-    }),
-  );
+    },
+  ]);
