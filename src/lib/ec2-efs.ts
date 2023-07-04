@@ -4,7 +4,7 @@ import {
   SecurityGroup,
   GetSecurityGroupResult,
 } from '@pulumi/aws/ec2';
-import { Input, output } from '@pulumi/pulumi';
+import { CustomResourceOptions, Input, output } from '@pulumi/pulumi';
 
 type ExcludedArgs =
   | 'type'
@@ -59,20 +59,28 @@ export type EfsAccessRuleArgs = Omit<SecurityGroupRuleArgs, ExcludedArgs> &
  * ```
  */
 export class EfsAccessRule extends SecurityGroupRule {
-  constructor(name: string, props: EfsAccessRuleArgs) {
+  constructor(
+    name: string,
+    props: EfsAccessRuleArgs,
+    opts?: CustomResourceOptions,
+  ) {
     const { mountTargetSecurityGroup, ...restProps } = props;
 
     const securityGroupId = output(mountTargetSecurityGroup).apply((sg) =>
       output(sg.id),
     );
 
-    super(name, {
-      ...restProps,
-      securityGroupId,
-      type: 'ingress',
-      fromPort: 2049,
-      toPort: 2049,
-      protocol: 'tcp',
-    });
+    super(
+      name,
+      {
+        ...restProps,
+        securityGroupId,
+        type: 'ingress',
+        fromPort: 2049,
+        toPort: 2049,
+        protocol: 'tcp',
+      },
+      opts,
+    );
   }
 }

@@ -3,7 +3,12 @@ import {
   SecurityGroup,
   SecurityGroupRule,
 } from '@pulumi/aws/ec2';
-import { ComponentResource, Input, output } from '@pulumi/pulumi';
+import {
+  ComponentResource,
+  ComponentResourceOptions,
+  Input,
+  output,
+} from '@pulumi/pulumi';
 
 export type { EfsAccessRuleArgs } from '../lib/ec2-efs';
 
@@ -16,8 +21,9 @@ export class AllowAllOutbound extends ComponentResource {
   constructor(
     name: string,
     securityGroup: Input<SecurityGroup | GetSecurityGroupResult>,
+    opts?: ComponentResourceOptions,
   ) {
-    super('pulumi-aws-toolkit:ec2:AllowAllOutbound', name);
+    super('pulumi-aws-toolkit:ec2:AllowAllOutbound', name, opts);
 
     output(securityGroup).apply((securityGroup) => {
       new SecurityGroupRule(

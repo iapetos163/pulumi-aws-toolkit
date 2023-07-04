@@ -9,6 +9,7 @@ import { GetRoleResult, Role } from '@pulumi/aws/iam';
 import type * as input from '@pulumi/aws/types/input';
 import {
   ComponentResource,
+  ComponentResourceOptions,
   Input,
   jsonStringify,
   output,
@@ -62,8 +63,12 @@ export interface RunEcsTaskTriggerArgs {
  * whenever the provided Event Rule is triggered
  */
 export class RunEcsTaskTrigger extends ComponentResource {
-  constructor(name: string, props: RunEcsTaskTriggerArgs) {
-    super('pulumi-aws-toolkit:cloudwatch:RunEcsTaskTrigger', name);
+  constructor(
+    name: string,
+    props: RunEcsTaskTriggerArgs,
+    opts?: ComponentResourceOptions,
+  ) {
+    super('pulumi-aws-toolkit:cloudwatch:RunEcsTaskTrigger', name, opts);
 
     const {
       cluster,
